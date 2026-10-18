@@ -52,3 +52,33 @@ Falsifier: A valid nested block comment is not classified as a comment, or match
 Mechanism: rust-language
 Status: Agreed 2026-10-18
 
+[HLT-011] The Highlighter MUST resolve `c` to the C language and `cpp` and `c++` to the C++ language, and MUST list all three identifiers among its supported languages.
+Falsifier: Any identifier selects the fallback or wrong language, or is absent from the supported-language list.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+
+[HLT-012] The C language MUST distinguish representative comments, preprocessor directives and includes, strings, character literals, numbers, keywords, storage qualifiers, built-in and declared types, literals, functions, operators, and punctuation.
+Falsifier: A representative C fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+
+[HLT-013] The C++ language MUST distinguish representative comments, preprocessor directives and includes, strings and raw strings, character literals, numbers, keywords, built-in and declared types, literals, namespaces, classes, templates, functions, operators, and punctuation.
+Falsifier: A representative C++ fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+
+[HLT-014] C and C++ highlighting MUST preserve the complete source text and MUST safely render source characters that have meaning in HTML.
+Falsifier: Removing theme markup from highlighted C or C++ changes, drops, reorders, or exposes any source character.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+
+[HLT-015] The repository MUST provide focused unit cases and non-empty benchmark and visual fixtures for both C and C++ whenever those languages are registered.
+Falsifier: C or C++ is registered while its focused cases or either fixture is missing or empty.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+
+[HLT-016] C and C++ comment recognition MUST handle an unterminated block comment without exhausting the PCRE backtracking limit.
+Falsifier: Matching a 1,000-character unterminated block comment with either language's comment pattern reports a PCRE error.
+Mechanism: c-cpp-language
+Status: Agreed 2026-10-18
+

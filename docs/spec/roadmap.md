@@ -1,6 +1,6 @@
 # Roadmap
 
-Current: rust-comment-performance
+Current: c-cpp-highlighting
 
 ## rust-highlighting
 
@@ -28,6 +28,15 @@ Make Rust block-comment matching avoid unnecessary backtracking while retaining
 nested-comment recognition. Done when the Rust mechanism is current and reviewed,
 the focused regression proves malformed input does not produce a PCRE error, and
 the repository QA commands pass.
+
+## c-cpp-highlighting
+
+Requirements: HLT-011, HLT-012, HLT-013, HLT-014, HLT-015, HLT-016
+
+Add separately registered C and C++ languages, cover their shared and distinct
+syntax, preserve source text, and add focused tests plus benchmark and visual
+fixtures. Done when the C/C++ mechanism is current and reviewed, both focused
+benchmarks and repository QA pass, and a cropped dark-mode screenshot is ready.
 
 ## Later language commitments
 
