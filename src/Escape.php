@@ -31,7 +31,7 @@ final readonly class Escape
         return self::reverse(
             str_replace(
                 ['&', '<', '>', '"'],
-                ['&amp;', '<', '&gt;', '&quot;'],
+                ['&amp;', '&lt;', '&gt;', '&quot;'],
                 $input,
             ),
         );
