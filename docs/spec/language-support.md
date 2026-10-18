@@ -47,3 +47,8 @@ Falsifier: Go is registered while its focused test cases, benchmark fixture, or 
 Mechanism: go-language
 Status: Agreed 2026-10-18
 
+[HLT-010] Rust comment recognition MUST preserve nested block comments and MUST handle an unterminated block comment without exhausting the PCRE backtracking limit.
+Falsifier: A valid nested block comment is not classified as a comment, or matching a 1,000-character unterminated block comment reports a PCRE error.
+Mechanism: rust-language
+Status: Agreed 2026-10-18
+
