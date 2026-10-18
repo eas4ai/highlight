@@ -112,3 +112,28 @@ Falsifier: Matching a 1,000-character unterminated block comment with either lan
 Mechanism: java-kotlin-language
 Status: Agreed 2026-10-18
 
+[HLT-023] The Highlighter MUST resolve `csharp`, `cs`, and `c#` to the C# language and list all three identifiers among its supported languages.
+Falsifier: Any identifier selects the fallback or wrong language, or is absent from the supported-language list.
+Mechanism: csharp-language
+Status: Agreed 2026-10-18
+
+[HLT-024] The C# language MUST distinguish representative preprocessor directives, namespaces and using directives, attributes, comments and XML documentation, regular, verbatim, interpolated, and raw strings, character literals, numbers, keywords and modifiers, built-in and declared types, classes, interfaces, structs, records, enums, delegates, generics and nullable types, literals, methods and calls, properties, lambdas, query expressions, operators, and punctuation.
+Falsifier: A representative C# fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: csharp-language
+Status: Agreed 2026-10-18
+
+[HLT-025] C# highlighting MUST preserve the complete source text and MUST safely render source characters that have meaning in HTML.
+Falsifier: Removing theme markup from highlighted C# changes, drops, reorders, or exposes any source character.
+Mechanism: csharp-language
+Status: Agreed 2026-10-18
+
+[HLT-026] The repository MUST provide focused C# unit cases and non-empty benchmark and visual fixtures whenever C# is registered.
+Falsifier: C# is registered while its focused cases or either fixture is missing or empty.
+Mechanism: csharp-language
+Status: Agreed 2026-10-18
+
+[HLT-027] C# comment and string recognition MUST handle representative unterminated input without exhausting the PCRE backtracking limit.
+Falsifier: Matching a 1,000-character unterminated block comment, raw string, or interpolated string reports a PCRE error.
+Mechanism: csharp-language
+Status: Agreed 2026-10-18
+

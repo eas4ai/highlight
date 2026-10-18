@@ -1,6 +1,6 @@
 # Roadmap
 
-Current: java-kotlin-highlighting
+Current: csharp-highlighting
 
 ## rust-highlighting
 
@@ -48,8 +48,17 @@ visual fixtures. Done when the Java/Kotlin mechanism is current and reviewed,
 both focused benchmarks and repository QA pass, and a cropped dark-mode
 screenshot is ready.
 
+## csharp-highlighting
+
+Requirements: HLT-023, HLT-024, HLT-025, HLT-026, HLT-027
+
+Add C# as a registered language, cover representative modern C# syntax,
+preserve source text, and add focused tests plus benchmark and visual fixtures.
+Done when the C# mechanism is current and reviewed, the focused benchmark and
+repository QA pass, and a cropped dark-mode screenshot is ready.
+
 ## Later language commitments
 
-Each group is delivered in its own pull request, in this order: C#; JSX and TSX;
-TOML; PowerShell.
+Each remaining group is delivered in its own pull request, in this order: JSX
+and TSX; TOML; PowerShell.
 
