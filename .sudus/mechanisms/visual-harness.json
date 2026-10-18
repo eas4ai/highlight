@@ -1,0 +1,1 @@
+{"definition":{"command":"vendor/bin/phpunit --fail-on-empty-test-suite --filter VisualHarness","cwd":null,"documents":[],"identity":{"env":[],"image":null,"tools":{}},"inputs":["composer.json","phpunit.xml","src/Themes/Css","tests/index.php","tests/targets"],"requirements":["HLT-005"],"results":null},"review":{},"schema":1}
