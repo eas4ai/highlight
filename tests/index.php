@@ -117,7 +117,7 @@ if ($themeCss === false) {
             overflow: hidden;
             border: 1px solid #30363d;
             border-radius: 10px;
-            background: #ffffff;
+            background: #0c0c0c;
             box-shadow: 0 16px 48px #0008;
         }
 
