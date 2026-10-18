@@ -82,3 +82,33 @@ Falsifier: Matching a 1,000-character unterminated block comment with either lan
 Mechanism: c-cpp-language
 Status: Agreed 2026-10-18
 
+[HLT-017] The Highlighter MUST resolve `java` to the Java language and `kotlin`, `kt`, and `kts` to the Kotlin language, and MUST list all four identifiers among its supported languages.
+Falsifier: Any identifier selects the fallback or wrong language, or is absent from the supported-language list.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+
+[HLT-018] The Java language MUST distinguish representative packages and imports, annotations, comments and Javadoc, strings and text blocks, character literals, numbers, keywords and modifiers, built-in and declared types, classes, interfaces, enums, records, generics, literals, methods and calls, lambdas, operators, and punctuation.
+Falsifier: A representative Java fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+
+[HLT-019] The Kotlin language MUST distinguish representative packages and imports, annotations, comments and KDoc, strings and multiline strings with interpolation, character literals, numbers, keywords and modifiers, built-in and declared types, classes, interfaces, objects, type aliases, literals, functions, calls and references, properties, lambdas, operators, and punctuation.
+Falsifier: A representative Kotlin fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+
+[HLT-020] Java and Kotlin highlighting MUST preserve the complete source text and MUST safely render source characters that have meaning in HTML.
+Falsifier: Removing theme markup from highlighted Java or Kotlin changes, drops, reorders, or exposes any source character.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+
+[HLT-021] The repository MUST provide focused unit cases and non-empty benchmark and visual fixtures for both Java and Kotlin whenever those languages are registered.
+Falsifier: Java or Kotlin is registered while its focused cases or either fixture is missing or empty.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+
+[HLT-022] Java and Kotlin comment recognition MUST handle an unterminated block comment without exhausting the PCRE backtracking limit.
+Falsifier: Matching a 1,000-character unterminated block comment with either language's comment pattern reports a PCRE error.
+Mechanism: java-kotlin-language
+Status: Agreed 2026-10-18
+

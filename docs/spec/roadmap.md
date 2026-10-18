@@ -1,6 +1,6 @@
 # Roadmap
 
-Current: c-cpp-highlighting
+Current: java-kotlin-highlighting
 
 ## rust-highlighting
 
@@ -38,8 +38,18 @@ syntax, preserve source text, and add focused tests plus benchmark and visual
 fixtures. Done when the C/C++ mechanism is current and reviewed, both focused
 benchmarks and repository QA pass, and a cropped dark-mode screenshot is ready.
 
+## java-kotlin-highlighting
+
+Requirements: HLT-017, HLT-018, HLT-019, HLT-020, HLT-021, HLT-022
+
+Add separately registered Java and Kotlin languages, cover their shared and
+distinct syntax, preserve source text, and add focused tests plus benchmark and
+visual fixtures. Done when the Java/Kotlin mechanism is current and reviewed,
+both focused benchmarks and repository QA pass, and a cropped dark-mode
+screenshot is ready.
+
 ## Later language commitments
 
-Each group is delivered in its own pull request, in this order: C and C++; Java
-and Kotlin; C#; JSX and TSX; TOML; PowerShell.
+Each group is delivered in its own pull request, in this order: C#; JSX and TSX;
+TOML; PowerShell.
 
