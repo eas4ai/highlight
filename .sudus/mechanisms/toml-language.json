@@ -1,0 +1,1 @@
+{"definition":{"command":"vendor/bin/phpunit --fail-on-empty-test-suite --filter TomlLanguage","cwd":null,"documents":[],"identity":{"env":[],"image":null,"tools":{}},"inputs":["composer.json","phpunit.xml","src","tests"],"requirements":["HLT-034","HLT-035","HLT-036","HLT-037","HLT-038"],"results":null},"review":{},"schema":1}
