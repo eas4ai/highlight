@@ -1,6 +1,6 @@
 # Roadmap
 
-Current: jsx-tsx-highlighting
+Current: toml-highlighting
 
 ## rust-highlighting
 
@@ -67,8 +67,16 @@ preserve source text, and add focused tests plus benchmark and visual fixtures.
 Done when the JSX/TSX mechanism is current and reviewed, both focused benchmarks
 and repository QA pass, and a cropped dark-mode screenshot is ready.
 
+## toml-highlighting
+
+Requirements: HLT-034, HLT-035, HLT-036, HLT-037, HLT-038
+
+Add TOML as a registered language, cover representative TOML 1.0 syntax,
+preserve source text, and add focused tests plus benchmark and visual fixtures.
+Done when the TOML mechanism is current and reviewed, the focused benchmark and
+repository QA pass, and a cropped dark-mode screenshot is ready.
+
 ## Later language commitments
 
-Each remaining group is delivered in its own pull request, in this order: TOML;
-PowerShell.
+The remaining PowerShell group is delivered in its own pull request.
 

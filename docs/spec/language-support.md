@@ -167,3 +167,28 @@ Falsifier: Matching a 1,000-character unterminated tag, quoted attribute, or emb
 Mechanism: jsx-tsx-language
 Status: Agreed 2026-10-18
 
+[HLT-034] The Highlighter MUST resolve `toml` to the TOML language and list the identifier among its supported languages.
+Falsifier: The identifier selects the fallback or wrong language, or is absent from the supported-language list.
+Mechanism: toml-language
+Status: Agreed 2026-10-18
+
+[HLT-035] The TOML language MUST distinguish representative comments, bare, quoted, and dotted keys, standard and array-of-tables headers, basic, literal, and multiline strings, integers in supported bases, floats and special float values, booleans, offset and local date-time values, arrays, inline tables, separators, and delimiters.
+Falsifier: A representative TOML fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: toml-language
+Status: Agreed 2026-10-18
+
+[HLT-036] TOML highlighting MUST preserve the complete source text and MUST safely render source characters that have meaning in HTML.
+Falsifier: Removing theme markup from highlighted TOML changes, drops, reorders, or exposes any source character.
+Mechanism: toml-language
+Status: Agreed 2026-10-18
+
+[HLT-037] The repository MUST provide focused TOML unit cases and non-empty benchmark and visual fixtures whenever TOML is registered.
+Falsifier: TOML is registered while its focused cases, benchmark fixture, or visual fixture are missing or empty.
+Mechanism: toml-language
+Status: Agreed 2026-10-18
+
+[HLT-038] TOML recognition MUST handle representative unterminated strings, arrays, and inline tables without exhausting the PCRE backtracking limit.
+Falsifier: Matching a 1,000-character unterminated basic string, multiline basic string, array, or inline table reports a PCRE error.
+Mechanism: toml-language
+Status: Agreed 2026-10-18
+
