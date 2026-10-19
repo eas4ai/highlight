@@ -137,3 +137,33 @@ Falsifier: Matching a 1,000-character unterminated block comment, raw string, or
 Mechanism: csharp-language
 Status: Agreed 2026-10-18
 
+[HLT-028] The Highlighter MUST resolve `jsx` to the JSX language and `tsx` to the TSX language and list both identifiers among its supported languages.
+Falsifier: Either identifier selects the fallback or wrong language, or is absent from the supported-language list.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+
+[HLT-029] The JSX language MUST distinguish representative JavaScript syntax, elements and fragments, intrinsic, component, member, and namespaced tags, attribute names and quoted values, spread attributes, embedded JavaScript expressions, text, entities, and comments.
+Falsifier: A representative JSX fixture leaves one of those categories unclassified or assigns it a conflicting category.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+
+[HLT-030] The TSX language MUST distinguish representative TypeScript syntax and the JSX categories in HLT-029, including TypeScript types and generics where angle brackets could otherwise be read as JSX tags.
+Falsifier: A representative TSX fixture leaves one of those categories unclassified, assigns it a conflicting category, or treats a generic arrow function as a JSX element.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+
+[HLT-031] JSX and TSX highlighting MUST preserve the complete source text and MUST safely render source characters that have meaning in HTML.
+Falsifier: Removing theme markup from highlighted JSX or TSX changes, drops, reorders, or exposes any source character.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+
+[HLT-032] The repository MUST provide focused unit cases and non-empty benchmark and visual fixtures for both JSX and TSX whenever those languages are registered.
+Falsifier: JSX or TSX is registered while its focused cases or either fixture is missing or empty.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+
+[HLT-033] JSX and TSX recognition MUST handle representative unterminated tags, quoted attributes, and embedded expressions without exhausting the PCRE backtracking limit.
+Falsifier: Matching a 1,000-character unterminated tag, quoted attribute, or embedded expression with either language reports a PCRE error.
+Mechanism: jsx-tsx-language
+Status: Agreed 2026-10-18
+

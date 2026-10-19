@@ -1,6 +1,6 @@
 # Roadmap
 
-Current: csharp-highlighting
+Current: jsx-tsx-highlighting
 
 ## rust-highlighting
 
@@ -57,8 +57,18 @@ preserve source text, and add focused tests plus benchmark and visual fixtures.
 Done when the C# mechanism is current and reviewed, the focused benchmark and
 repository QA pass, and a cropped dark-mode screenshot is ready.
 
+## jsx-tsx-highlighting
+
+Requirements: HLT-028, HLT-029, HLT-030, HLT-031, HLT-032, HLT-033
+
+Add separately registered JSX and TSX languages, reuse the existing JavaScript
+and TypeScript behavior, cover representative JSX syntax and TSX ambiguity,
+preserve source text, and add focused tests plus benchmark and visual fixtures.
+Done when the JSX/TSX mechanism is current and reviewed, both focused benchmarks
+and repository QA pass, and a cropped dark-mode screenshot is ready.
+
 ## Later language commitments
 
-Each remaining group is delivered in its own pull request, in this order: JSX
-and TSX; TOML; PowerShell.
+Each remaining group is delivered in its own pull request, in this order: TOML;
+PowerShell.
 
