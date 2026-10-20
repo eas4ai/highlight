@@ -33,10 +33,13 @@ use Tempest\Highlight\Languages\Markdown\MarkdownLanguage;
 use Tempest\Highlight\Languages\Nginx\NginxLanguage;
 use Tempest\Highlight\Languages\Php\PhpLanguage;
 use Tempest\Highlight\Languages\Python\PythonLanguage;
+use Tempest\Highlight\Languages\Ruby\RubyLanguage;
 use Tempest\Highlight\Languages\Rust\RustLanguage;
 use Tempest\Highlight\Languages\Scss\ScssLanguage;
+use Tempest\Highlight\Languages\Sema\SemaLanguage;
 use Tempest\Highlight\Languages\Sql\SqlLanguage;
 use Tempest\Highlight\Languages\Svelte\SvelteLanguage;
+use Tempest\Highlight\Languages\Swift\SwiftLanguage;
 use Tempest\Highlight\Languages\Terminal\TerminalLanguage;
 use Tempest\Highlight\Languages\Terraform\TerraformLanguage;
 use Tempest\Highlight\Languages\Text\TextLanguage;
@@ -113,7 +116,10 @@ final class Highlighter
             ->addLanguage(new KotlinLanguage())
             ->addLanguage(new TwigLanguage())
             ->addLanguage(new SvelteLanguage())
-            ->addLanguage(new VueLanguage());
+            ->addLanguage(new VueLanguage())
+            ->addLanguage(new RubyLanguage())
+            ->addLanguage(new SemaLanguage())
+            ->addLanguage(new SwiftLanguage());
 
         $this->parseTokens = new ParseTokens();
         $this->groupTokens = new GroupTokens();

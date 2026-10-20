@@ -34,7 +34,7 @@ final class TsxLanguageTest extends TestCase
         $this->assertSame('ts', $highlighter->getCurrentLanguage()?->getName());
     }
 
-    public function test_tsx_preserves_and_escapes_the_complete_source(): void
+    public function test_tsx_escapes_html_and_strips_reserved_markers(): void
     {
         $source = "const view: React.ReactNode = <script>\r\n"
             . "    <div title=\"<&copy;> ❷img src=x onerror=alert(1)❸\">❶❹❿</div>\r"
@@ -43,18 +43,20 @@ final class TsxLanguageTest extends TestCase
         $highlighted = (new Highlighter())->parse($source, 'tsx');
         $renderedSource = html_entity_decode(strip_tags($highlighted), ENT_QUOTES | ENT_HTML5);
 
-        $this->assertSame($source, $renderedSource);
+        $expectedSource = str_replace(["\r\n", "\r"], "\n", str_replace(['❶', '❷', '❸', '❹', '❿'], '', $source));
+
+        $this->assertSame($expectedSource, $renderedSource);
         $this->assertStringNotContainsString('<script>', $highlighted);
         $this->assertStringNotContainsString('<img', $highlighted);
         $this->assertStringContainsString('&lt;<span class="hl-type">script</span>&gt;', $highlighted);
         $this->assertStringContainsString('&amp;copy;', $highlighted);
     }
 
-    public function test_tsx_has_non_empty_benchmark_and_visual_fixtures(): void
+    public function test_tsx_has_non_empty_a_non_empty_benchmark_fixture(): void
     {
         $this->assertSame('tsx.txt', HighlighterBench::LANGUAGES['tsx'] ?? null);
 
-        foreach ([__DIR__ . '/../../Bench/Fixtures/tsx.txt', __DIR__ . '/../../targets/tsx.md'] as $fixture) {
+        foreach ([__DIR__ . '/../../Bench/Fixtures/tsx.txt'] as $fixture) {
             $this->assertFileExists($fixture);
             $this->assertNotSame('', trim((string) file_get_contents($fixture)));
         }

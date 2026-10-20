@@ -12,9 +12,8 @@ use Tempest\Highlight\Languages\Jsx\Patterns\JsxSpreadAttributePattern;
 use Tempest\Highlight\Languages\Jsx\Patterns\JsxTagPattern;
 use Tempest\Highlight\Languages\Tsx\Patterns\TsxGenericArrowPattern;
 use Tempest\Highlight\Languages\TypeScript\TypeScriptLanguage;
-use Tempest\Highlight\SourcePreservingLanguage;
 
-class TsxLanguage extends TypeScriptLanguage implements SourcePreservingLanguage
+class TsxLanguage extends TypeScriptLanguage
 {
     #[Override]
     public function getName(): string

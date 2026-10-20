@@ -11,9 +11,8 @@ use Tempest\Highlight\Languages\Jsx\Patterns\JsxEntityPattern;
 use Tempest\Highlight\Languages\Jsx\Patterns\JsxFragmentPattern;
 use Tempest\Highlight\Languages\Jsx\Patterns\JsxSpreadAttributePattern;
 use Tempest\Highlight\Languages\Jsx\Patterns\JsxTagPattern;
-use Tempest\Highlight\SourcePreservingLanguage;
 
-class JsxLanguage extends JavaScriptLanguage implements SourcePreservingLanguage
+class JsxLanguage extends JavaScriptLanguage
 {
     #[Override]
     public function getName(): string
